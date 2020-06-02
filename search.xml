@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>chorme中input自动填充后背景色的异常</title>
-    <url>/2020/05/11/css/css2020-05-11/</url>
+    <url>./2020/05/11/css/css2020-05-11/</url>
     <content><![CDATA[<hr>
 
 <h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在日常网页开发中，input 被大量使用，往往 input 会被赋予很多自定义的 css。在一次登录页面的开发中，开启了 input 的 autocomplete 的属性，发现自定义的背景色样式被浏览器样式覆盖。<br>奇怪的点在于，调试工具中显示浏览器样式已经被自定义样式覆盖。可实际上页面仍然显示了浏览器的样式。<br><img src="1.png" alt=""><br><img src="2.png" alt=""><br><img src="3.png" alt=""></p>
@@ -18,7 +18,7 @@
   </entry>
   <entry>
     <title>关于git clone --depth时无法push到新仓库</title>
-    <url>/2020/05/08/git/git2020-05-08/</url>
+    <url>./2020/05/08/git/git2020-05-08/</url>
     <content><![CDATA[<hr>
 
 <h1 id="push-报错-shallow-update-not-allowed"><a href="#push-报错-shallow-update-not-allowed" class="headerlink" title="push 报错 (shallow update not allowed)"></a>push 报错 (shallow update not allowed)</h1><p>github 上的很多开源代码仓库往往比较大，导致<code>git clone</code>时很慢。因此往往采用<code>--depth</code>参数进行克隆。在对克隆下来的项目修改后试图<code>git push</code>到私库中时，<br>出现了<code>(shallow update not allowed)</code>的错误。</p>
@@ -33,26 +33,8 @@
       </tags>
   </entry>
   <entry>
-    <title>element-ui的el-cascader踩坑</title>
-    <url>/2020/04/29/vue/vue2020-04-29/</url>
-    <content><![CDATA[<hr>
-
-<h1 id="案发现场"><a href="#案发现场" class="headerlink" title="案发现场"></a>案发现场</h1><p>使用的是 element-ui 组件，在表单 el-form 中使用级联选择器 el-cascader，绑定完数据后出现选中选项后界面卡死。问题代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;el-form v-model=<span class="string">"form"</span>&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;el-form-item label=<span class="string">"area"</span>&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;el-cascader</span></pre></td></tr><tr><td class="code"><pre><span class="line">      :options=<span class="string">"options"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      v-model=<span class="string">"selected.value"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      ref=<span class="string">"selected"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-cascader</span>&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;<span class="regexp">/el-form-item&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">&lt;/</span>el-form&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">......</span></pre></td></tr><tr><td class="code"><pre><span class="line">data() &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="keyword">return</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    selected: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      value: <span class="string">""</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ......</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;,</span></pre></td></tr><tr><td class="code"><pre><span class="line">computed: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  form() &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">let</span> result = &#123;&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    result.code = <span class="keyword">this</span>.selected.value ? <span class="keyword">this</span>.selected.value : <span class="string">""</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    result.label =</span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="keyword">this</span>.$refs.selected &amp;&amp; <span class="keyword">this</span>.$refs.selected.getCheckedNodes()[<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ? <span class="keyword">this</span>.$refs.selected.getCheckedNodes()[<span class="number">0</span>].label</span></pre></td></tr><tr><td class="code"><pre><span class="line">        : <span class="string">""</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> result;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>很意外，误打误撞地解决了这个问题,问题原因需要另外探究。<br>方法：只需要给 el-cascader 绑定 props 属性就能解决，如下</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;el-cascader</span></pre></td></tr><tr><td class="code"><pre><span class="line">    :props=<span class="string">"props"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    :options=<span class="string">"options"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    v-model=<span class="string">"selected.value"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    ref=<span class="string">"selected"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-cascader</span>&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&lt;<span class="regexp">/my-form&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">......</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">props:&#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">  /</span><span class="regexp">/可以进行配置，为空也能解决问题</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">&#125;</span></span></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-        <tag>Element</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记一次computed的不触发的问题</title>
-    <url>/2020/04/17/vue/vue2020-04-20/</url>
+    <url>./2020/04/17/vue/vue2020-04-20/</url>
     <content><![CDATA[<hr>
 
 <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>使用 element-ui 的 el-cascader（级联选择器）时，需要同时获取选中的 label 和 value，实现方法如下:</p>
@@ -69,6 +51,24 @@
       </categories>
       <tags>
         <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>element-ui的el-cascader踩坑</title>
+    <url>./2020/04/29/vue/vue2020-04-29/</url>
+    <content><![CDATA[<hr>
+
+<h1 id="案发现场"><a href="#案发现场" class="headerlink" title="案发现场"></a>案发现场</h1><p>使用的是 element-ui 组件，在表单 el-form 中使用级联选择器 el-cascader，绑定完数据后出现选中选项后界面卡死。问题代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;el-form v-model=<span class="string">"form"</span>&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;el-form-item label=<span class="string">"area"</span>&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &lt;el-cascader</span></pre></td></tr><tr><td class="code"><pre><span class="line">      :options=<span class="string">"options"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      v-model=<span class="string">"selected.value"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      ref=<span class="string">"selected"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-cascader</span>&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;<span class="regexp">/el-form-item&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">&lt;/</span>el-form&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">......</span></pre></td></tr><tr><td class="code"><pre><span class="line">data() &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="keyword">return</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    selected: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      value: <span class="string">""</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ......</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;,</span></pre></td></tr><tr><td class="code"><pre><span class="line">computed: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  form() &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">let</span> result = &#123;&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    result.code = <span class="keyword">this</span>.selected.value ? <span class="keyword">this</span>.selected.value : <span class="string">""</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    result.label =</span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="keyword">this</span>.$refs.selected &amp;&amp; <span class="keyword">this</span>.$refs.selected.getCheckedNodes()[<span class="number">0</span>]</span></pre></td></tr><tr><td class="code"><pre><span class="line">        ? <span class="keyword">this</span>.$refs.selected.getCheckedNodes()[<span class="number">0</span>].label</span></pre></td></tr><tr><td class="code"><pre><span class="line">        : <span class="string">""</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> result;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>很意外，误打误撞地解决了这个问题,问题原因需要另外探究。<br>方法：只需要给 el-cascader 绑定 props 属性就能解决，如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;el-cascader</span></pre></td></tr><tr><td class="code"><pre><span class="line">    :props=<span class="string">"props"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    :options=<span class="string">"options"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    v-model=<span class="string">"selected.value"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    ref=<span class="string">"selected"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  &gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-cascader</span>&gt;</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&lt;<span class="regexp">/my-form&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">......</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">props:&#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">  /</span><span class="regexp">/可以进行配置，为空也能解决问题</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">&#125;</span></span></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>Element</tag>
       </tags>
   </entry>
 </search>
