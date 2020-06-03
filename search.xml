@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>chorme中input自动填充后背景色的异常</title>
-    <url>./2020/05/11/css/css2020-05-11/</url>
-    <content><![CDATA[<hr>
-
-<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在日常网页开发中，input 被大量使用，往往 input 会被赋予很多自定义的 css。在一次登录页面的开发中，开启了 input 的 autocomplete 的属性，发现自定义的背景色样式被浏览器样式覆盖。<br>奇怪的点在于，调试工具中显示浏览器样式已经被自定义样式覆盖。可实际上页面仍然显示了浏览器的样式。<br><img src="1.png" alt=""><br><img src="2.png" alt=""><br><img src="3.png" alt=""></p>
-<h1 id="解决方案查询"><a href="#解决方案查询" class="headerlink" title="解决方案查询"></a>解决方案查询</h1><p>在查阅了相关问题后，网络上的很多解决方案是用 box-shadow 来遮盖 background，但这并不能实现我的需求，当前使用场景 input 需要带有透明度。<br>另一种粗暴的做法是<code>autocomplete=&quot;off&quot;</code>，该方案也不是很理想。</p>
-<h1 id="最终的解决方案"><a href="#最终的解决方案" class="headerlink" title="最终的解决方案"></a>最终的解决方案</h1><p>利用 background-clip 属性把背景色裁减掉。首先设置<code>background-clip:content-box</code>,裁减掉 padding 部分的背景色。<br>然后设置<code>height:0</code>,这样背景就完全消失了。</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>css chorme</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于git clone --depth时无法push到新仓库</title>
-    <url>./2020/05/08/git/git2020-05-08/</url>
+    <url>/2020/05/08/git/git2020-05-08/</url>
     <content><![CDATA[<hr>
 
 <h1 id="push-报错-shallow-update-not-allowed"><a href="#push-报错-shallow-update-not-allowed" class="headerlink" title="push 报错 (shallow update not allowed)"></a>push 报错 (shallow update not allowed)</h1><p>github 上的很多开源代码仓库往往比较大，导致<code>git clone</code>时很慢。因此往往采用<code>--depth</code>参数进行克隆。在对克隆下来的项目修改后试图<code>git push</code>到私库中时，<br>出现了<code>(shallow update not allowed)</code>的错误。</p>
@@ -33,8 +17,46 @@
       </tags>
   </entry>
   <entry>
+    <title>记一次云服务器mysql被黑的惨痛教训</title>
+    <url>/2020/06/02/other/other2020-06-02/</url>
+    <content><![CDATA[<hr>
+
+<h1 id="事件描述"><a href="#事件描述" class="headerlink" title="事件描述"></a>事件描述</h1><p>由于我在服务器上没有什么重要数据，就没怎么关注mysql的安全问题，开放了3306端口，也没有修改账号密码。昨天突然发现gogs上不去了，在查看了日志后，发现了是mysql数据库被黑的结果。<br>下面还原下被黑后的现场：<br><img src="1.png" alt=""><br>看下完整的warnning：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">To recover your lost Database and avoid leaking it: Send us 0.035 Bitcoin (BTC) to our Bitcoin address 1BT9Cj3y5w5G2wzLnJNWSvHpyGSAA74W7x and contact us by Email with your Server IP or Domain name and a Proof of Payment. If you are unsure if we have your data, contact us and we will send you a proof. Your Database is downloaded and backed up on our servers. Backups that we have right now: ***, ***, ***, ***. If we dont receive your payment in the next 5 Days, we will make your database public or use them otherwise.</span></pre></td></tr></table></figure><br>没什么重要数据,竟然勒索我0.035比特币,换算下来2500rmb.我的天!!!</p>
+<h1 id="吸取教训"><a href="#吸取教训" class="headerlink" title="吸取教训"></a>吸取教训</h1><ul>
+<li>为避免该事件的发生,直接关闭了mysql的3306端口的外网访问。</li>
+<li>吸取这次的教训，顺带关闭了除80、443、22等必要端口之外的端口。</li>
+<li>禁止了服务器使用username和password的登录方式，改用秘钥登录。</li>
+<li>改用ssh的方式连接远程数据库进行访问。</li>
+</ul>
+<h1 id="后续打算"><a href="#后续打算" class="headerlink" title="后续打算"></a>后续打算</h1><p>幸运的是本次服务器上没什么重要数据，后续打算做数据库定期全量备份和增量备份，以避免下次灾难来临数据丢失。</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>server</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chorme中input自动填充后背景色的异常</title>
+    <url>/2020/05/11/css/css2020-05-11/</url>
+    <content><![CDATA[<hr>
+
+<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>在日常网页开发中，input 被大量使用，往往 input 会被赋予很多自定义的 css。在一次登录页面的开发中，开启了 input 的 autocomplete 的属性，发现自定义的背景色样式被浏览器样式覆盖。<br>奇怪的点在于，调试工具中显示浏览器样式已经被自定义样式覆盖。可实际上页面仍然显示了浏览器的样式。<br><img src="1.png" alt=""><br><img src="2.png" alt=""><br><img src="3.png" alt=""></p>
+<h1 id="解决方案查询"><a href="#解决方案查询" class="headerlink" title="解决方案查询"></a>解决方案查询</h1><p>在查阅了相关问题后，网络上的很多解决方案是用 box-shadow 来遮盖 background，但这并不能实现我的需求，当前使用场景 input 需要带有透明度。<br>另一种粗暴的做法是<code>autocomplete=&quot;off&quot;</code>，该方案也不是很理想。</p>
+<h1 id="最终的解决方案"><a href="#最终的解决方案" class="headerlink" title="最终的解决方案"></a>最终的解决方案</h1><p>利用 background-clip 属性把背景色裁减掉。首先设置<code>background-clip:content-box</code>,裁减掉 padding 部分的背景色。<br>然后设置<code>height:0</code>,这样背景就完全消失了。</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>css chorme</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记一次computed的不触发的问题</title>
-    <url>./2020/04/17/vue/vue2020-04-20/</url>
+    <url>/2020/04/17/vue/vue2020-04-20/</url>
     <content><![CDATA[<hr>
 
 <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>使用 element-ui 的 el-cascader（级联选择器）时，需要同时获取选中的 label 和 value，实现方法如下:</p>
@@ -55,7 +77,7 @@
   </entry>
   <entry>
     <title>element-ui的el-cascader踩坑</title>
-    <url>./2020/04/29/vue/vue2020-04-29/</url>
+    <url>/2020/04/29/vue/vue2020-04-29/</url>
     <content><![CDATA[<hr>
 
 <h1 id="案发现场"><a href="#案发现场" class="headerlink" title="案发现场"></a>案发现场</h1><p>使用的是 element-ui 组件，在表单 el-form 中使用级联选择器 el-cascader，绑定完数据后出现选中选项后界面卡死。问题代码如下：</p>

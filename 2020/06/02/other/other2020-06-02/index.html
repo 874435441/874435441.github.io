@@ -21,16 +21,20 @@
     var CONFIG = {"hostname":"874435441.github.io","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Don&amp;apos;t think too much,Just do!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MapleBlog">
-<meta property="og:url" content="https:&#x2F;&#x2F;874435441.github.io&#x2F;archives&#x2F;2020&#x2F;index.html">
+  <meta name="description" content="记一次云服务器mysql被黑,遭遇BTC勒索的惨痛教训">
+<meta name="keywords" content="server,mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次云服务器mysql被黑的惨痛教训">
+<meta property="og:url" content="https:&#x2F;&#x2F;874435441.github.io&#x2F;2020&#x2F;06&#x2F;02&#x2F;other&#x2F;other2020-06-02&#x2F;index.html">
 <meta property="og:site_name" content="MapleBlog">
-<meta property="og:description" content="Don&amp;apos;t think too much,Just do!">
+<meta property="og:description" content="记一次云服务器mysql被黑,遭遇BTC勒索的惨痛教训">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;874435441.github.io&#x2F;2020&#x2F;06&#x2F;02&#x2F;other&#x2F;other2020-06-02&#x2F;1.png">
+<meta property="og:updated_time" content="2020-06-02T08:31:37.735Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;874435441.github.io&#x2F;2020&#x2F;06&#x2F;02&#x2F;other&#x2F;other2020-06-02&#x2F;1.png">
 
-<link rel="canonical" href="https://874435441.github.io/archives/2020/">
+<link rel="canonical" href="https://874435441.github.io/2020/06/02/other/other2020-06-02/">
 
 
 <script id="page-configurations">
@@ -38,11 +42,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : true
   };
 </script>
 
-  <title>归档 | MapleBlog</title>
+  <title>记一次云服务器mysql被黑的惨痛教训 | MapleBlog</title>
   
 
 
@@ -179,129 +183,141 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://874435441.github.io/2020/06/02/other/other2020-06-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Maple">
+      <meta itemprop="description" content="Don't think too much,Just do!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MapleBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          记一次云服务器mysql被黑的惨痛教训
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:05:32 / 修改时间：16:31:37" itemprop="dateCreated datePublished" datetime="2020-06-02T14:05:32+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">记一次云服务器mysql被黑,遭遇BTC勒索的惨痛教训</div>
+            
+            <div class="post-tags">
+                <a href="/tags/server/" rel="tag"><i class="fa fa-tag"></i> server</a>
+                <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            </div>
+
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <hr>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-02T14:05:32+08:00"
-              content="2020-06-02">
-          06-02
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/06/02/other/other2020-06-02/" itemprop="url">
-            <span itemprop="name">记一次云服务器mysql被黑的惨痛教训</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-11T09:41:44+08:00"
-              content="2020-05-11">
-          05-11
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/05/11/css/css2020-05-11/" itemprop="url">
-            <span itemprop="name">chorme中input自动填充后背景色的异常</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-08T09:33:50+08:00"
-              content="2020-05-08">
-          05-08
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/05/08/git/git2020-05-08/" itemprop="url">
-            <span itemprop="name">关于git clone --depth时无法push到新仓库</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T16:28:18+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/04/29/vue/vue2020-04-29/" itemprop="url">
-            <span itemprop="name">element-ui的el-cascader踩坑</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-17T16:28:18+08:00"
-              content="2020-04-17">
-          04-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/04/17/vue/vue2020-04-20/" itemprop="url">
-            <span itemprop="name">记一次computed的不触发的问题</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<h1 id="事件描述"><a href="#事件描述" class="headerlink" title="事件描述"></a>事件描述</h1><p>由于我在服务器上没有什么重要数据，就没怎么关注mysql的安全问题，开放了3306端口，也没有修改账号密码。昨天突然发现gogs上不去了，在查看了日志后，发现了是mysql数据库被黑的结果。<br>下面还原下被黑后的现场：<br><img src="1.png" alt=""><br>看下完整的warnning：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">To recover your lost Database and avoid leaking it: Send us 0.035 Bitcoin (BTC) to our Bitcoin address 1BT9Cj3y5w5G2wzLnJNWSvHpyGSAA74W7x and contact us by Email with your Server IP or Domain name and a Proof of Payment. If you are unsure if we have your data, contact us and we will send you a proof. Your Database is downloaded and backed up on our servers. Backups that we have right now: ***, ***, ***, ***. If we dont receive your payment in the next 5 Days, we will make your database public or use them otherwise.</span></pre></td></tr></table></figure><br>没什么重要数据,竟然勒索我0.035比特币,换算下来2500rmb.我的天!!!</p>
+<h1 id="吸取教训"><a href="#吸取教训" class="headerlink" title="吸取教训"></a>吸取教训</h1><ul>
+<li>为避免该事件的发生,直接关闭了mysql的3306端口的外网访问。</li>
+<li>吸取这次的教训，顺带关闭了除80、443、22等必要端口之外的端口。</li>
+<li>禁止了服务器使用username和password的登录方式，改用秘钥登录。</li>
+<li>改用ssh的方式连接远程数据库进行访问。</li>
+</ul>
+<h1 id="后续打算"><a href="#后续打算" class="headerlink" title="后续打算"></a>后续打算</h1><p>幸运的是本次服务器上没什么重要数据，后续打算做数据库定期全量备份和增量备份，以避免下次灾难来临数据丢失。</p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>感谢各位姥爷们的支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/weChatPay.jpg" alt="Maple 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/aliPay.jpg" alt="Maple 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Maple
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="/https:/874435441.github.io/2020/06/02/other/other2020-06-02/" title="记一次云服务器mysql被黑的惨痛教训">https://874435441.github.io/2020/06/02/other/other2020-06-02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/11/css/css2020-05-11/" rel="prev" title="chorme中input自动填充后背景色的异常">
+      <i class="fa fa-chevron-left"></i> chorme中input自动填充后背景色的异常
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
@@ -352,6 +368,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件描述"><span class="nav-number">1.</span> <span class="nav-text">事件描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#吸取教训"><span class="nav-number">2.</span> <span class="nav-text">吸取教训</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后续打算"><span class="nav-number">3.</span> <span class="nav-text">后续打算</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
